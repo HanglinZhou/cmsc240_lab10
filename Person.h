@@ -9,7 +9,7 @@ class Person
     protected:
         std::string firstName;
         std::string lastName;
-        struct tm dateOfBirth;
+        struct tm dob;
         std::string address;
         std::string NetID;
         int URID;

@@ -24,44 +24,61 @@ Person::~Person(){
 }
 
 std::string Person::getFirstName(){
-
+  return "first name?";
 }
 
 std::string Person::getLastName(){
-
+  return "last name?";
 }
 
 struct tm Person::getDateOfBirth(){
-
+  struct tm wrongDOB;
+  return wrongDOB;
 }
 
 std::string Person::getAddress(){
-
+  return "address?"
 }
 
 std::string Person::getNetID(){
-
+  return "netID?"
 }
 
-int
+int Person::getURID(){
+  return 0;
+}
 
-        std::string  getLastName();
-        struct tm    getDateOfBirth();
-            // see http://www.cplusplus.com/reference/ctime/tm/
-        std::string  getAddress();
-        std::string  getNetID();
-        int          getURID();
-        std::string  getEmail();
-        long         getPhone();
+std::string Person::getEmail(){
+  return "email?"
+}
 
-        void setFirstName(std::string fname);
-        void setLastName(std::string lname);
-        void setDateOfBirth(int day, int month, int year);
-        void setAddress(std::string address);
-        void setNetID(std::string netid);
-        void setURID(int urid);
-        void setEmail(std::string email);
-        void setPhone(long number);
-};
+long Person::getPhone(){
+  return 000000000;
+}
+
+void Person::setFirstName(std::string fname){
+}
+
+void Person::setLastName(std::string lname){
+}
+
+void Person::setDateOfBirth(int day, int month, int year){
+}
+
+void Person::setAddress(std::string address){
+}
+
+void Person::setNetID(std::string netid){
+}
+
+void Person::setURID(int urid){
+}
+
+void Person::setEmail(std::string email){
+}
+
+void Person::setPhone(long number){
+}
+
 
 #endif
