@@ -37,11 +37,11 @@ struct tm Person::getDateOfBirth(){
 }
 
 std::string Person::getAddress(){
-  return "address?"
+  return "address?";
 }
 
 std::string Person::getNetID(){
-  return "netID?"
+  return "netID?";
 }
 
 int Person::getURID(){
@@ -49,7 +49,7 @@ int Person::getURID(){
 }
 
 std::string Person::getEmail(){
-  return "email?"
+  return "email?";
 }
 
 long Person::getPhone(){
