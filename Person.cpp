@@ -1,3 +1,4 @@
+//Name: Will Saada, Hanglin Zhou (Jojo)
 #ifndef __PERSON_CPP__
 #define __PERSON_CPP__
 
@@ -9,7 +10,16 @@ Person::Person(){
 }
 
 Person::Person(const Person& other){
-
+  this->URID = other.URID;
+  this->NetID = other.NetID;
+  this->lastName = other.lastName;
+  this->firstName = other.firstName;
+  this->dob.tm_mday = other.dob.tm_mday;
+  this->dob.tm_mon = other.dob.tm_mon;
+  this->dob.tm_year = other.dob.tm_year;
+  this->email = other.email;
+  this->address = other.address;
+  this->phone = other.phone;
 }
 
 Person::Person(int urid, std::string netid, std::string lname, std::string

@@ -1,3 +1,4 @@
+//Name: Will Saada, Hanglin Zhou (Jojo)
 #ifndef __PERSON_H__
 #define __PERSON_H__
 
