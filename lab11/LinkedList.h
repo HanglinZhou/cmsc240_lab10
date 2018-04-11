@@ -41,4 +41,25 @@ LinkedList<T>::LinkedList(const LinkedList<T>& other){
     itr++;
   }
 }
+
+template <class T>
+void LinkedList<T>::add(T element)
+{
+
+}
+
+template <class T>
+int LinkedList<T>::size() const;
+{
+    return 3;
+}
+template <class T>
+T LinkedList<T>::get(int index) const;
+{
+    return true;
+}
+
+
+
+
 #endif
