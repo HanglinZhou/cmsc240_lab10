@@ -41,22 +41,31 @@ LinkedList<T>::LinkedList(const LinkedList<T>& other){
     itr++;
   }
 }
-
+//adds an element to the end of the list
 template <class T>
 void LinkedList<T>::add(T element)
 {
-
+    theList.push_back(element);
 }
 
 template <class T>
 int LinkedList<T>::size() const;
 {
-    return 3;
+    return 5;
 }
 template <class T>
 T LinkedList<T>::get(int index) const;
 {
-    return true;
+    /* typename std::list<T>::iterator itr = other.theList.begin();
+    while (itr != other.theList.end()){
+    theList.;
+    itr++;
+    */
+    T t;
+
+    return t;
+  }
+   
 }
 
 
