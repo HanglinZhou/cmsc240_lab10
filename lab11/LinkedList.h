@@ -53,6 +53,7 @@ int LinkedList<T>::size() const;
 {
     return 3;
 }
+
 template <class T>
 T LinkedList<T>::get(int index) const;
 {
@@ -60,6 +61,23 @@ T LinkedList<T>::get(int index) const;
 }
 
 
+template <class T>
+T LinkedList<T>::remove(int index){
+  T t;
+  return t;
+}
+
+template <class T>
+vector<T> LinkedList<T>::toArray() const{
+  vector<T> v;
+  return v;
+}
+
+template <class T>
+LinkedList<T>& operator+=(const T& item){
+  LinkedList<T> t;
+  return t;
+}
 
 
 #endif
