@@ -3,6 +3,10 @@
 
 #include <list>
 #include <vector>
+#include <stdexcept>
+#include <iostream>
+#include <sstream>
+
 
 template <class T>
 class LinkedList
@@ -47,29 +51,37 @@ void LinkedList<T>::add(T element)
 {
     theList.push_back(element);
 }
-
 template <class T>
-int LinkedList<T>::size() const;
+int LinkedList<T>::size() const
 {
-    return 5;
+    return theList.size();
 }
 
 template <class T>
-T LinkedList<T>::get(int index) const;
+T LinkedList<T>::get(int index) const
 {
-    /* typename std::list<T>::iterator itr = other.theList.begin();
-    while (itr != other.theList.end()){
-    theList.;
-    itr++;
-    */
-    T t;
+    
+      if(index >= theList.size() || index < 0)
+      {
+        std::stringstream ss;
+        ss << "Invalid Argument: " << index << std::endl << "List size: " << theList.size();
+        throw std::invalid_argument (ss.str());
 
-    return t;
-  }
-   
+      } 
+     
+      int count = 0;
+      typename std::list<T>::const_iterator itr = theList.begin();
+      while (itr != theList.end()){
+      
+        if(count == index)
+        {
+          return *itr;
+        }
+        count++;
+        itr++;
+        }
+    
 }
-
-
 template <class T>
 T LinkedList<T>::remove(int index){
   T t;
@@ -77,13 +89,13 @@ T LinkedList<T>::remove(int index){
 }
 
 template <class T>
-vector<T> LinkedList<T>::toArray() const{
-  vector<T> v;
+std::vector<T> LinkedList<T>::toArray() const{
+  std::vector<T> v;
   return v;
 }
 
 template <class T>
-LinkedList<T>& operator+=(const T& item){
+LinkedList<T>& LinkedList<T>::operator+=(const T& item){
   LinkedList<T> t;
   return t;
 }
