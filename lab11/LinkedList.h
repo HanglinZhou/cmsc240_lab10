@@ -60,27 +60,34 @@ int LinkedList<T>::size() const
 template <class T>
 T LinkedList<T>::get(int index) const
 {
-    
+
       if(index >= theList.size() || index < 0)
       {
         std::stringstream ss;
         ss << "Invalid Argument: " << index << std::endl << "List size: " << theList.size();
         throw std::invalid_argument (ss.str());
 
-      } 
-     
+      }
+
       int count = 0;
       typename std::list<T>::const_iterator itr = theList.begin();
-      while (itr != theList.end()){
-      
-        if(count == index)
-        {
-          return *itr;
-        }
+
+      while (count != index){
         count++;
         itr++;
-        }
-    
+      }
+
+      return *itr;
+      // while (itr != theList.end()){
+
+       // if(count == index)
+       // {
+         // return *itr;
+       // }
+       // count++;
+       // itr++;
+       // }
+
 }
 template <class T>
 T LinkedList<T>::remove(int index){
