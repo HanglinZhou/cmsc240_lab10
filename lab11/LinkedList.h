@@ -47,64 +47,74 @@ LinkedList<T>::LinkedList(const LinkedList<T>& other){
 }
 //adds an element to the end of the list
 template <class T>
-void LinkedList<T>::add(T element)
-{
-    theList.push_back(element);
-}
-template <class T>
-int LinkedList<T>::size() const
-{
-    return theList.size();
+void LinkedList<T>::add(T element){
+  theList.push_back(element);
 }
 
 template <class T>
-T LinkedList<T>::get(int index) const
-{
+int LinkedList<T>::size() const{
+  return theList.size();
+}
 
-      if(index >= theList.size() || index < 0)
-      {
-        std::stringstream ss;
-        ss << "Invalid Argument: " << index << std::endl << "List size: " << theList.size();
-        throw std::invalid_argument (ss.str());
+template <class T>
+T LinkedList<T>::get(int index) const{
 
-      }
+  if(index < theList.size() && index >= 0){
+    typename std::list<T>::const_iterator itr = theList.begin();
 
-      int count = 0;
-      typename std::list<T>::const_iterator itr = theList.begin();
+    std::advance(itr,index);
+    return *itr;
+  }
 
-      while (count != index){
-        count++;
-        itr++;
-      }
+  std::stringstream ss;
+  ss << "invalid attempt to retrieve from empty list: " << std::endl;
+  ss << "invalid index: " << index << "list size: " << theList.size() << std::endl;
+  std::string str = ss.str();
+  throw std::invalid_argument(str.c_str());
 
-      return *itr;
-      // while (itr != theList.end()){
-
-       // if(count == index)
-       // {
-         // return *itr;
-       // }
-       // count++;
-       // itr++;
-       // }
 
 }
+
 template <class T>
 T LinkedList<T>::remove(int index){
-  T t;
-  return t;
+
+  if(index < theList.size() && index >= 0){
+  typename std::list<T>::iterator itr = theList.begin();
+
+  std::advance(itr,index);
+
+  T removeElem = *itr;
+  theList.erase(itr);
+  return removeElem;
+  }
+
+  std::stringstream ss;
+  ss << "invalid attempt to retrieve from empty list: " << std::endl;
+  ss << "invalid index: " << index << "list size: " << theList.size();
+  std::string str = ss.str();
+  throw std::invalid_argument(str.c_str());
+
+
 }
 
 template <class T>
 std::vector<T> LinkedList<T>::toArray() const{
   std::vector<T> v;
+  typename std::list<T>::const_iterator itr = theList.begin();
+
+  while (itr != theList.end()){
+    v.push_back(*itr);
+    itr++;
+  }
+
   return v;
+
 }
 
 template <class T>
 LinkedList<T>& LinkedList<T>::operator+=(const T& item){
-  LinkedList<T> t;
-  return t;
+  add(item);
+  return *this;
 }
 
 
